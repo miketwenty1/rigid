@@ -10,7 +10,7 @@ var create_patient = require('./routes/create_patient');
 var create_trial = require('./routes/create_trial');
 var doctor = require('./routes/doctor');
 var index = require('./routes/index');
-var d_login = require('./routes/dlogin');
+var dlogin = require('./routes/dlogin');
 var pretrial = require('./routes/pretrial');
 var question = require('./routes/question');
 var trials = require('./routes/trials');
@@ -19,7 +19,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-app.locals.randomjson = require('./.secrets.json');
+app.locals.secret = require('./.secrets.json');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,13 +39,11 @@ app.use('/create_patient_page', create_patient);
 app.use('/create_trials_view', create_trial);
 app.use('/doctor', doctor);
 app.use('/', index);
-app.use('/d_login', d_login);
+app.use('/dlogin', dlogin);
 app.use('/pretrial', pretrial);
 app.use('/question_view', question);
 app.use('/trials_view', trials);
 app.use('/users', users);
-
-
 
 
 // catch 404 and forward to error handler

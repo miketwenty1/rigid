@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.render('view trial', {
+    res.render('trials_view', {
         title: 'add trial please'});
 });
 
