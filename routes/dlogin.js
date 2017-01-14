@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.render('blocktrails', {
-        title: 'blocktrails'});
+    res.render('doctor login', {
+        title: 'doctor login'});
 });
 
 module.exports = router;

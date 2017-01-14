@@ -5,10 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
 var add_patient = require('./routes/add_patient');
+var create_patient = require('./routes/create_patient');
+var create_trial = require('./routes/create_trial');
 var doctor = require('./routes/doctor');
+var index = require('./routes/index');
+var d_login = require('./routes/dlogin');
+var pretrial = require('./routes/pretrial');
+var question = require('./routes/question');
+var trials = require('./routes/trials');
+var users = require('./routes/users');
 
 
 var app = express();
@@ -27,25 +33,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function(req, res, next) {
-  console.log(req.body);
-  //console.log(req.query);
-    if (req.body.email == "123")
-    {
-        app.use('/doctor', doctor);
-    }
-    else
-    {
-        app.use('/users', users);
-    }
-    next();
-});
 
-
-app.use('/', index);
-app.use('/users', users);
-app.use('/doctor', doctor);
 app.use('/add_patient', add_patient);
+app.use('/create_patient_page', create_patient);
+app.use('/create_trials_view', create_trial);
+app.use('/doctor', doctor);
+app.use('/', index);
+app.use('/d_login', d_login);
+app.use('/pretrial', pretrial);
+app.use('/question_view', question);
+app.use('/trials_view', trials);
+app.use('/users', users);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
