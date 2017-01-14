@@ -27,6 +27,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+  console.log(req.body);
+  //console.log(req.query);
+    if (req.body.email == "123")
+    {
+        app.use('/doctor', doctor);
+    }
+    else
+    {
+        app.use('/users', users);
+    }
+    next();
+});
+
+
 app.use('/', index);
 app.use('/users', users);
 app.use('/doctor', doctor);
