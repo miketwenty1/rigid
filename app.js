@@ -20,6 +20,7 @@ var test = require('./routes/test');
 var test2 = require('./routes/test2');
 var test3 = require('./routes/test3');
 var trialers = require('./routes/trialers');
+var trialee = require('./routes/trialee');
 
 
 var app = express();
