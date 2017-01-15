@@ -26,6 +26,7 @@ var trialee = require('./routes/trialee');
 var app = express();
 app.locals.datastore = require('./store.json');
 app.locals.secret = require('./.secrets.json');
+app.locals.datastore2 = require('./store2.json');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
