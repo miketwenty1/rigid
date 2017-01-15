@@ -19,10 +19,11 @@ var ind = require('./routes/ind');
 var test = require('./routes/test');
 var test2 = require('./routes/test2');
 var test3 = require('./routes/test3');
+var trialers = require('./routes/trialers');
 
 
 var app = express();
-
+app.locals.datastore = require('./store.json');
 app.locals.secret = require('./.secrets.json');
 
 // view engine setup
@@ -52,7 +53,8 @@ app.use('/ind', ind);
 app.use('/test', test);
 app.use('/test2', test2);
 app.use('/test3', test3);
-
+app.use('/trialers', trialers);
+app.use('/trialee', trialee);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
