@@ -15,7 +15,7 @@
     <div>
         <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/trials_view">Home<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/trialee">Home<span class="sr-only">(current)</span></a></li>
                 <li><a href="/about">About us</a></li>
                 <li><a href="/contact">Contact us</a></li>
             </ul>
@@ -24,18 +24,28 @@
     <br/>
     <div class="jumbotron">
 
-            <p>
+        <p>
 
-        <center><a href="/query">Query For Participant</a> </center>
+        <center><a href="/trialee">Query For Participant</a> </center>
 
 
-            </p>
+        </p>
 
         <ul>
             <h2>All Participants</h2>
             <% datastore2.forEach(function(item) { %>
             <li>   <%= item.userids   %>
-                <b><i> <%= item.consent %> </i></b>
+                <b><i> <%= item.consent %></i></b>
+                <ul>
+                    <li><b><i> MerkleRoot: </i></b> <%= item.sha256 %></li>
+
+                    <li><b><i> Blockchain Receipt: </i></b> <%= item.receipt %></li>
+                    <li>
+                        <b><i> Proof: </i></b>
+                        <a target="_blank" href='https://www.blocktrail.com/BTC/tx/<%= item.proof%>'>Tierion/Blocktrail cross ref source id: <%= item.proof%></a>
+                    </li>
+                </ul>
+                <br>
 
                 <% }); %>
             </li>

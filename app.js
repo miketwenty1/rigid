@@ -22,7 +22,8 @@ var test3 = require('./routes/test3');
 var trialers = require('./routes/trialers');
 var trialee = require('./routes/trialee');
 var thanks = require('./routes/thanks');
-var thank2 = require('./routes/thanks');
+var thank2 = require('./routes/thank2');
+var query = require('./routes/query');
 
 
 var app = express();
@@ -60,7 +61,8 @@ app.use('/test3', test3);
 app.use('/trialers', trialers);
 app.use('/trialee', trialee);
 app.use('/thanks', thanks);
-app.use('/thank', thanks);
+app.use('/thank2', thanks);
+app.use('/query', query);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
