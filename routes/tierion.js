@@ -46,8 +46,8 @@ Tierion.prototype.compareHash = function(str, receipt) {
 
 Tierion.prototype.auth = function(callback) {
 
-    var username = 'mtidwell021@gmail.com';
-    var password = 'boatsnhoes';
+    var username = secret.tierion_username;
+    var password = secret.tierion_password;
 
     this.hashClient = new hashclient();
     console.log("hashClient created");
