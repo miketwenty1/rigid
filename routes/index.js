@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
     res.render('index', {
         title: 'login page'
     });
+    res.send();
 });
 
 module.exports = router;

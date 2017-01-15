@@ -3,10 +3,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
-
-    res.render('create_trials_view', {
-        title: 'Trial'});
+    res.render('thank2', {
+        title: 'na'});
 });
 
 module.exports = router;

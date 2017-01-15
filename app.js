@@ -21,6 +21,8 @@ var test2 = require('./routes/test2');
 var test3 = require('./routes/test3');
 var trialers = require('./routes/trialers');
 var trialee = require('./routes/trialee');
+var thanks = require('./routes/thanks');
+var thank2 = require('./routes/thank2');
 
 
 var app = express();
@@ -57,6 +59,8 @@ app.use('/test2', test2);
 app.use('/test3', test3);
 app.use('/trialers', trialers);
 app.use('/trialee', trialee);
+app.use('/thank2', thank2);
+app.use('/thanks', thanks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
