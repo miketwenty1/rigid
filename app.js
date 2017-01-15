@@ -22,7 +22,7 @@ var test3 = require('./routes/test3');
 var trialers = require('./routes/trialers');
 var trialee = require('./routes/trialee');
 var thanks = require('./routes/thanks');
-var thank2 = require('./routes/thank2');
+var thank2 = require('./routes/thanks');
 
 
 var app = express();
@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use("/client", express.static(__dirname + '/client'));
 
 app.use('/add_patient', add_patient);
 app.use('/create_patient_page', create_patient);
@@ -59,8 +59,8 @@ app.use('/test2', test2);
 app.use('/test3', test3);
 app.use('/trialers', trialers);
 app.use('/trialee', trialee);
-app.use('/thank2', thank2);
 app.use('/thanks', thanks);
+app.use('/thank', thanks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
