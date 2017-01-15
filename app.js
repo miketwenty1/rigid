@@ -15,6 +15,10 @@ var pretrial = require('./routes/pretrial');
 var question = require('./routes/question');
 var trials = require('./routes/trials');
 var users = require('./routes/users');
+var ind = require('./routes/ind');
+var test = require('./routes/test');
+var test2 = require('./routes/test2');
+var test3 = require('./routes/test3');
 
 
 var app = express();
@@ -44,6 +48,10 @@ app.use('/pretrial', pretrial);
 app.use('/question_view', question);
 app.use('/trials_view', trials);
 app.use('/users', users);
+app.use('/ind', ind);
+app.use('/test', test);
+app.use('/test2', test2);
+app.use('/test3', test3);
 
 
 // catch 404 and forward to error handler

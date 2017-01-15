@@ -5,7 +5,35 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
+<center>
 <h1><%= title %></h1>
-<p>Welcome  </p>
+
+
+<table>
+    <tr>
+        <td>
+<form action="/" method="post">
+    <div class="form-group">
+        <label>Patient First Name: </label>
+        <input type="text" class="form-control" name="email">
+    </div>
+    <div class="form-group">
+        <label>Patient Last Name: </label>
+        <input type="password" class="form-control" name="password">
+    </div>
+    <div class="form-group">
+        <label>Email Address: </label>
+        <input type="password" class="form-control" name="password">
+    </div>
+
+    <!-- <button type="submit" class="btn btn-warning btn-lg">Login</button> -->
+</form>
+<form method="get" action="/doctor">
+    <button type="submit">submit</button>
+</form>
+        </td>
+    </tr>
+</table>
+</center>
 </body>
 </html>
